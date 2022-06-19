@@ -1,10 +1,11 @@
-## Day 01 - JavaScript, TypeScript
+## Module 01 - JavaScript, TypeScript
 ### Projects:
 |     |     |
 | --- | --- |
 | [Fun with JS](fun-with-js/) | Introduction to some javascript gotchas | 
 | [Fun with Node](fun-with-node) | All about Node, npm, and Webpack |
 | [Fun with TS](fun-with-ts/) | Introduction to Typesscript |
+| [Exercise Example](exercise-example/) | Demo of how to create typescript driven web page |
 
 ### Javascript types and gotchas
 * We have Convered the 7 types of javascript: boolean, number, string, object, function, null and undefined
@@ -17,6 +18,11 @@
 * We learned the difference between serverside javascript (**NodeJS**) and clientside web javascript
   * We talked about modularity and the `require` keyword
   * We talked about `webpack`  - a utility to pack "serverside" javascript files into one "web-ready" file
+* We have installed NodeJS from the website and run javascript files using node
+* Npm was also installed
+    * We have seen how the file `pakcage.json` helps to manage our project
+    * We used npm to incorporate external JS packages into our project
+    * We saw how to use npm to globally install javacript tools so we can execute them from anywhere
 
 ### About the various Javascript engines
 * We reiterated that javascript can be executed either by NodeJS and by the browser
@@ -43,16 +49,8 @@
 * Union Types
 * Cross Types
 * the `type` alias
-
-### How to use Node, Npm, and Tsc
-* We have installed NodeJS from the website and run javascript files using node
-* Npm was also installed
-    * We have seen how the file `pakcage.json` helps to manage our project
-    * We used npm to incorporate external JS packages into our project
-    * We saw how to use npm to globally install javacript tools so we can execute them from anywhere
-* We have created ts file and compiled it with TSC and run it with Node
-* We saw how to use the file `tsconfig` to configure the typescript compiler
 * We saw how to build **Modular** typescript projects by defining typescript modules
   * defining exportable identifiers using the `export` keyword
   * defining imported identifiers using the `import` keyword
+
 
