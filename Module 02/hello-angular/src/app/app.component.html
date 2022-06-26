@@ -1,0 +1,13 @@
+<input #searchBox (input)="enterKeyword(searchBox.value)" 
+       type="search" [disabled]="isBusy">
+<button (click)="search()" [disabled]="isBusy">Go</button>
+<img src="assets/spinner.gif"
+    *ngIf="isBusy">
+
+<hr>
+
+<ul>
+    <li *ngFor="let item of results">
+        {{item}}
+    </li>
+</ul>
