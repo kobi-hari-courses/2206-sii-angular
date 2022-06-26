@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +13,7 @@ export class AppComponent {
   selectedColor = this.colors[0];
   selectedFont = this.fonts[0];
   selectedSize = this.sizes[0];
+
 
   selectColor(value: string) {
     this.selectedColor = value;

@@ -1,26 +1,29 @@
+<div class="title-area">
+    <app-title caption="Our Notepad app"
+                *ngIf="selectedColor !== 'purple'" 
+               [color]="selectedColor"></app-title>
+</div>
+
 <div class="colors-area">
-    <ul>
-        <li *ngFor="let item of colors"
-            [class.chosen]="item === selectedColor"
-            (click)="selectColor(item)"
-        >{{item | titlecase}}</li>
-    </ul>
+    <app-string-selector
+        [options]="colors"
+        [selected]="selectedColor"
+        (selection)="selectColor($event)"
+    ></app-string-selector>
 </div>
 <div class="fonts-area">
-    <ul>
-        <li *ngFor="let item of fonts"
-        [class.chosen]="item === selectedFont"
-        (click)="selectFont(item)"
-        >{{item | titlecase}}</li>
-    </ul>    
+    <app-string-selector 
+        [options]="fonts"
+        [selected]="selectedFont"
+        (selection)="selectFont($event)"
+        ></app-string-selector>
 </div>
 <div class="sizes-area">
-    <ul>
-        <li *ngFor="let item of sizes"
-        [class.chosen]="item === selectedSize"
-        (click)="selectSize(item)"
-        >{{item | titlecase}}</li>
-    </ul>    
+    <app-string-selector 
+        [options]="sizes"
+        [selected]="selectedSize"
+        (selection)="selectSize($event)"
+        ></app-string-selector>
 </div>
 <div class="text-area">
     <textarea

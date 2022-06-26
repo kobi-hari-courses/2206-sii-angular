@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let item of options"
+        [class.chosen]="item === selected"
+        (click)="whenUserClicks(item)"
+    >{{item | titlecase}}</li>
+</ul>    
