@@ -57,4 +57,11 @@
 * We used the `@Output` Directive and the `EventMitter<T>` class to create our own events and raise them in our components
 * We used the `(event)="action()"` Syntax to respond to an event in the container component
 * We used the `$event` keyword to access event data
+* We learned about the various lifecycle hooks of angular components:
+  * The constructor itself
+  * The `OnInit` interface (after the inputs have been initialized)
+  * The `OnChanges` interface (after each time an input is updated)
+  * The `OnDestroy` interface (right before the component is to be removed from the DOM and destroyed)
+  * The `AfterViewInit` interface (right after the template has been created)
+
 
