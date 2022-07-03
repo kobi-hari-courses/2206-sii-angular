@@ -1,0 +1,8 @@
+
+<span>Addition Id = {{additionService.id}}</span>
+<span>, Wrong Id = {{wrongAdditionService.id}}</span>
+<input #num1 type="number">
++
+<input #num2 type="number">
+<button (click)="add(num1.valueAsNumber, num2.valueAsNumber)">=</button>
+{{result}}
