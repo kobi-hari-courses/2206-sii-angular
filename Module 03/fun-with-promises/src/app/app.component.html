@@ -1,1 +1,9 @@
-<button (click)="go()">GO!</button>
+<button (click)="go2()">GO!</button>
+
+<hr>
+
+
+<div *ngIf="isPromiseInProgress">
+    <input type="number" #promiseResult>
+    <button (click)="completeCurrentPromise(promiseResult.valueAsNumber)">Complete Promise</button>
+</div>
