@@ -1,0 +1,1 @@
+export type BoardStatus = 'In-Progress' | 'Win' | 'Lose';
