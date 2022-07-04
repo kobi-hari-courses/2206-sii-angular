@@ -1,0 +1,6 @@
+<div class="root" *ngIf="dictionary">
+    <app-cell *ngFor="let pair of dictionary" 
+        [cell]="{content: pair[0], status: pair[1]}"
+        [isSmall]="true"
+        ></app-cell>
+</div>

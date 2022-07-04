@@ -2,6 +2,7 @@ import { Board } from '../models/board';
 import { BoardStatus } from '../models/board-status';
 import { Cell } from '../models/cell';
 import { CellStatus } from '../models/cell-status';
+import { Dictionary } from '../models/dictionary';
 import { Guess } from '../models/guess';
 
 /*
@@ -27,6 +28,7 @@ export function initialBoard(): Board {
     currentGuessIndex: 0,
     guesses: guesses,
     status: 'In-Progress',
+    dictionary: initialDictionary()
   };
   return res;
 }
@@ -81,13 +83,28 @@ export function boardWithNewGuess(
     ? 'Lose'
     : 'In-Progress';
 
+  const newDictionary = cells.reduce((dict, cell) => ({
+    ...dict, 
+    [cell.content]: cell.status
+  }), board.dictionary);
+
   const newBoard: Board = {
     currentGuessIndex: board.currentGuessIndex + 1,
     guesses: newGuesses,
     status: newStatus,
+    dictionary: newDictionary
   };
 
   return newBoard;
+}
+
+export function initialDictionary(): Dictionary {
+  const alpha = new Array(26)
+    .fill(0)
+    .map((_, index) => String.fromCharCode(index + 65));
+
+  const pairs = alpha.map(letter => [letter, 'Empty']);
+  return Object.fromEntries(pairs);
 }
 
 

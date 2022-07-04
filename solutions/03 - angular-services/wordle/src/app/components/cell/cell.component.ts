@@ -10,6 +10,9 @@ export class CellComponent implements OnInit {
   @Input()
   cell: Cell | null = null;
 
+  @Input()
+  isSmall: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {

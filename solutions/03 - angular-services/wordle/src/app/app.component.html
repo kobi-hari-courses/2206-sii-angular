@@ -1,5 +1,6 @@
 <h1>Wordle</h1>
 <app-board [board]="board"></app-board>
+<app-dictionary [dictionary]="dictionary"></app-dictionary>
 
 <div class="next-guess" *ngIf="!isCompleted">
   <input #nextGuess type="text" [disabled]="isBusy">

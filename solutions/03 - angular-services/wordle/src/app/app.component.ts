@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Board } from './models/board';
+import { CellStatus } from './models/cell-status';
 import { GameService } from './services/game.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class AppComponent {
   isLose: boolean = false;
   guessCount: number = 0;
   secret: string = '';
+  dictionary: [string, CellStatus][] = [];
 
 
 
@@ -29,6 +31,7 @@ export class AppComponent {
     this.isLose = this.board.status === 'Lose';
     this.guessCount = this.board.currentGuessIndex;
     this.secret = this.gameService.secret;
+    this.dictionary = Object.entries(this.board.dictionary);
   }
 
   async addGuess(guess: string) {

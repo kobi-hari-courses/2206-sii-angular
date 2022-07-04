@@ -13,7 +13,6 @@ export class GuessComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.guess);
   }
 
 }
