@@ -96,5 +96,8 @@ export function fakeInitialBoard(): Board {
   res = boardWithNewGuess(res, 'black', 'JOKER');
   res = boardWithNewGuess(res, 'price', 'JOKER');
   res = boardWithNewGuess(res, 'poker', 'JOKER');
+  res = boardWithNewGuess(res, 'black', 'JOKER');
+  res = boardWithNewGuess(res, 'price', 'JOKER');
+  res = boardWithNewGuess(res, 'toker', 'JOKER');
   return res;
 }

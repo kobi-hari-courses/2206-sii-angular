@@ -5,21 +5,21 @@ import { Guess } from '../models/guess';
 import { Cell } from '../models/cell';
 import { CellStatus } from '../models/cell-status';
 import { BoardStatus } from '../models/board-status';
-import { boardWithNewGuess, fakeInitialBoard } from './board-helpers';
+import { boardWithNewGuess, fakeInitialBoard, initialBoard } from './board-helpers';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameService {
   private state!: Board;
-  private secret!: string;
+  public secret!: string;
 
   constructor() {
     this.reset();
   }
 
   reset() {
-    this.state = fakeInitialBoard();
+    this.state = initialBoard();
     this.secret = this.randomWord();
   }
 

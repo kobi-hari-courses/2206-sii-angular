@@ -5,6 +5,10 @@
     padding: 20px;
 }
 
+h1 {
+    font-size: 4em;
+}
+
 .next-guess {
     display: flex;
     flex-direction: row;   
@@ -24,4 +28,42 @@ img {
 button {
     font-size: 40px;
     margin: 4px;
+}
+
+.win {
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+    align-items: center;
+    border: 1px solid #538d4e;
+    background-color: #538d4e44;
+    color: #538d4e;
+    padding: 16px;
+}
+
+.win button {
+    padding: 10px;
+    border: 1px solid #538d4e;
+    color: black;
+    background-color: #538d4e;
+    cursor: pointer;
+}
+
+.lose {
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+    align-items: center;
+    border: 1px solid #8d4e4e;
+    background-color: #8d4e4e44;
+    color: #8d4e4e;
+    padding: 16px;
+}
+
+.lose button {
+    padding: 10px;
+    border: 1px solid #8d4e4e;
+    color: black;
+    background-color: #8d4e4e;
+    cursor: pointer;
 }
