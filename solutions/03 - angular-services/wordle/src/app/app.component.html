@@ -2,6 +2,6 @@
 <app-board [board]="board"></app-board>
 
 <div class="next-guess">
-  <input type="text">
-  <button>Enter</button>
+  <input #nextGuess type="text">
+  <button (click)="addGuess(nextGuess.value)">Enter</button>
 </div>

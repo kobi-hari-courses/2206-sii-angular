@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Guess } from 'src/app/models/guess';
 
 @Component({
   selector: 'app-guess',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./guess.component.css']
 })
 export class GuessComponent implements OnInit {
+  @Input()
+  guess: Guess | null = null;
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.guess);
   }
 
 }

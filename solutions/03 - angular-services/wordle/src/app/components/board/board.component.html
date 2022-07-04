@@ -1,1 +1,3 @@
-<p>board works!</p>
+<div *ngIf="board">
+    <app-guess *ngFor="let guess of board.guesses" [guess]="guess"></app-guess>
+</div>

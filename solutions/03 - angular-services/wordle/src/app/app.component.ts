@@ -13,4 +13,8 @@ export class AppComponent {
   constructor(private gameService: GameService) {
     this.board = this.gameService.getState();
   }
+
+  async addGuess(guess: string) {
+    this.board = await this.gameService.addGuess(guess);
+  }
 }

@@ -5,6 +5,7 @@ import { Guess } from '../models/guess';
 import { Cell } from '../models/cell';
 import { CellStatus } from '../models/cell-status';
 import { BoardStatus } from '../models/board-status';
+import { boardWithNewGuess, fakeInitialBoard } from './board-helpers';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class GameService {
   }
 
   reset() {
-    this.state = this.initialBoard();
+    this.state = fakeInitialBoard();
     this.secret = this.randomWord();
   }
 
@@ -31,53 +32,11 @@ export class GameService {
   }
 
   async addGuess(guess: string): Promise<Board> {
-    if (this.state.status !== 'In-Progress') return this.state;
-
-    const cells = this.cellsOfGuess(guess, this.secret);
-    const isCorrect = cells.every(c => c.status === 'Correct');
-
-    const newGuesses = this.state.guesses.map((guess, index) => 
-      (index !== this.state.currentGuessIndex) ? guess : ({
-        cells: cells, 
-        isCorrect: isCorrect, 
-        isFilled: true
-      }));
-
-    const newStatus: BoardStatus = isCorrect ? 'Win' : 
-      ((this.state.currentGuessIndex === this.state.guesses.length - 1) ? 'Lose' : 'In-Progress');
-
-    const newBoard: Board = {
-      currentGuessIndex: this.state.currentGuessIndex + 1, 
-      guesses: newGuesses, 
-      status: newStatus
-    };
-
     await this.delay(3000);
-
-    return newBoard;
+    this.state = boardWithNewGuess(this.state, guess, this.secret);
+    return this.state;
   }
 
-  // converts a new guess into an array of cells
-  cellsOfGuess(guess: string, secret: string): Cell[] {
-    guess = guess.toUpperCase();
-    const letters = guess
-      .split('')
-      .filter((_, index) => index < 5);
-
-    const cells: Cell[] = letters.map((letter, index) => ({
-      content: letter, 
-      status: this.statusOfLetter(letter, index, secret)
-    }));
-    return cells;
-  }
-
-  // calculates the status of a cell according to the letter, the index, and the current secret
-  statusOfLetter(letter: string, index: number, secret: string): CellStatus {
-    if (!letter) return 'Empty';    
-    if (secret.charAt(index) === letter) return 'Correct';
-    if (secret.includes(letter)) return 'Misplaced';
-    return 'Wrong';    
-  }
 
   // returns a random word from the list of possible words
   randomWord(): string {
@@ -85,21 +44,4 @@ export class GameService {
     return WORDS[index].toUpperCase();
   }
 
-  // calculates a new Board entity with the initial state of the game
-  initialBoard(): Board {
-    const guesses: Guess[] = Array(6).map(_ => ({
-      isCorrect: false, 
-      isFilled: false, 
-      cells: Array(5).map(_ => ({
-        content: '', 
-        status: 'Empty'
-      }))
-    }))
-
-    return {
-      currentGuessIndex: 0, 
-      guesses: guesses, 
-      status: 'In-Progress'
-    }
-  }
 }
