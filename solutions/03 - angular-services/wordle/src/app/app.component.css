@@ -4,3 +4,24 @@
     align-items: center;
     padding: 20px;
 }
+
+.next-guess {
+    display: flex;
+    flex-direction: row;   
+    align-items: center; 
+}
+
+input {
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+img {
+    height: 50px;
+    margin: 4px;
+}
+
+button {
+    font-size: 40px;
+    margin: 4px;
+}

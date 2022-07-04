@@ -9,12 +9,15 @@ import { GameService } from './services/game.service';
 })
 export class AppComponent {
   board!: Board;
+  isBusy: boolean = false;
 
   constructor(private gameService: GameService) {
     this.board = this.gameService.getState();
   }
 
   async addGuess(guess: string) {
+    this.isBusy = true;
     this.board = await this.gameService.addGuess(guess);
+    this.isBusy = false;
   }
 }

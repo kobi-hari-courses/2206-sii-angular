@@ -2,6 +2,8 @@
 <app-board [board]="board"></app-board>
 
 <div class="next-guess">
-  <input #nextGuess type="text">
-  <button (click)="addGuess(nextGuess.value)">Enter</button>
+  <input #nextGuess type="text" [disabled]="isBusy">
+  <button (click)="addGuess(nextGuess.value)" [disabled]="isBusy">Enter</button>
+  <img src="assets/spinner.gif" *ngIf="isBusy">
+
 </div>
