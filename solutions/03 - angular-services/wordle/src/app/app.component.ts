@@ -44,5 +44,6 @@ export class AppComponent {
   async reset() {
     this.gameService.reset();
     this.board = this.gameService.getState();
+    this.invalidate();
   }
 }
