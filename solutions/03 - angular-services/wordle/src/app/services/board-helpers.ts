@@ -95,6 +95,6 @@ export function fakeInitialBoard(): Board {
   let res: Board = initialBoard();
   res = boardWithNewGuess(res, 'black', 'JOKER');
   res = boardWithNewGuess(res, 'price', 'JOKER');
-  res = boardWithNewGuess(res, 'joker', 'JOKER');
+  res = boardWithNewGuess(res, 'poker', 'JOKER');
   return res;
 }
