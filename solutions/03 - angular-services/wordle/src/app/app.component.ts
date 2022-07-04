@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Board } from './models/board';
+import { GameService } from './services/game.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'wordle';
+  board!: Board;
+
+  constructor(private gameService: GameService) {
+    this.board = this.gameService.getState();
+  }
 }
