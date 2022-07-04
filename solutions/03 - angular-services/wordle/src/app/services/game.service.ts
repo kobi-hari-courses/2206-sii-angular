@@ -57,6 +57,7 @@ export class GameService {
     return newBoard;
   }
 
+  // converts a new guess into an array of cells
   cellsOfGuess(guess: string, secret: string): Cell[] {
     guess = guess.toUpperCase();
     const letters = guess
@@ -70,6 +71,7 @@ export class GameService {
     return cells;
   }
 
+  // calculates the status of a cell according to the letter, the index, and the current secret
   statusOfLetter(letter: string, index: number, secret: string): CellStatus {
     if (!letter) return 'Empty';    
     if (secret.charAt(index) === letter) return 'Correct';
@@ -77,11 +79,13 @@ export class GameService {
     return 'Wrong';    
   }
 
+  // returns a random word from the list of possible words
   randomWord(): string {
     const index = Math.floor(Math.random() * WORDS.length);
     return WORDS[index].toUpperCase();
   }
 
+  // calculates a new Board entity with the initial state of the game
   initialBoard(): Board {
     const guesses: Guess[] = Array(6).map(_ => ({
       isCorrect: false, 
