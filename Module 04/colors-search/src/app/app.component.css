@@ -1,0 +1,14 @@
+.tools-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+input {
+    font-size: 32px;
+    width: 200px;
+}
+
+img {
+    height: 40px;
+}
