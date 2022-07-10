@@ -7,6 +7,14 @@ import { BehaviorSubject, interval, Observable, Observer, of, ReplaySubject, Sub
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  isShowingReader: boolean = true;
+
+  toggleReader() {
+    this.isShowingReader = !this.isShowingReader;
+  }
+
+
+
   createObserver(id: string): Observer<number> {
     return {
       next: val => console.log(`observer ${id} next ${val}`), 
