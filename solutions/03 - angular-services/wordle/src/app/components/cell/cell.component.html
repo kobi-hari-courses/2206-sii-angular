@@ -1,0 +1,9 @@
+<div *ngIf="cell" 
+    [class.empty]="cell.status === 'Empty'"
+    [class.wrong]="cell.status === 'Wrong'"
+    [class.misplaced]="cell.status === 'Misplaced'"
+    [class.correct]="cell.status === 'Correct'"
+    [class.small]="isSmall"
+>
+    {{cell.content}}
+</div>

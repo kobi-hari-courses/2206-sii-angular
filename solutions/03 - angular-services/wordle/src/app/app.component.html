@@ -1,0 +1,21 @@
+<h1>Wordle</h1>
+<app-board [board]="board"></app-board>
+<app-dictionary [dictionary]="dictionary"></app-dictionary>
+
+<div class="next-guess" *ngIf="!isCompleted">
+  <input #nextGuess type="text" [disabled]="isBusy">
+  <button (click)="addGuess(nextGuess.value)" [disabled]="isBusy">Enter</button>
+  <img src="assets/spinner.gif" *ngIf="isBusy">
+</div>
+
+<div class="win" *ngIf="isWin">
+  <h2>Well Done</h2>
+  <p>You used {{guessCount}} Guesses</p>
+  <button (click)="reset()">Try again</button>
+</div>
+
+<div class="lose" *ngIf="isLose">
+  <h2>Nice try, but you missed it</h2>
+  <p>The correct guess was {{secret}}</p>
+  <button (click)="reset()">Try again</button>
+</div>

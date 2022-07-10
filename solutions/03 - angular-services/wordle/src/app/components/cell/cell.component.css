@@ -1,0 +1,38 @@
+div {
+    width: 62px;
+    height: 62px;
+    margin: 2.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;  
+}
+
+div.small {
+    font-size: 16px;
+    width: 31px;
+    height: 31px;
+    border-width: 1px;
+}
+
+.empty {
+    border: 2px solid lightgray;
+}
+
+.wrong, .correct, .misplaced {
+    color: white;
+}
+
+.wrong {    
+    background-color: #3a3a3c;
+}
+
+.correct {
+    background-color: #538d4e;
+}
+
+.misplaced {
+    background-color: #b59f3b;
+}
