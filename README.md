@@ -3,6 +3,8 @@
 * [Day 01 - Javascript and Typescript](Module%2001/README.md)
 * [Day 02 - Angular Components](Module%2002/README.md)
 * [Day 03 - Dependency Injection and Promises](Module%2003/README.md)
+* [Day 04 - RxJs and reactive development](Module%2004/README.md)
+* [Day 05 - Routing and Http](Module%2005/README.md)
 
 ## Exercises
 * [CSS Exercises](exercises/01%20-%20css/)
