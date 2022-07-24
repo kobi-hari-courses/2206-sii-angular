@@ -39,4 +39,10 @@ export class MovieDetailsComponent implements OnInit {
     this.router.navigate(['movies', index - 1]);
   }
 
+  goEdit() {
+    const index = Number(this.route.snapshot.params['mispar']);
+    this.router.navigate(['movies', index, 'edit']);
+    
+  }
+
 }

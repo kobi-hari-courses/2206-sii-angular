@@ -1,1 +1,1 @@
-<p>movie-edit works!</p>
+<h1>Edit movie: <span *ngIf="(movie$ | async) as movie">{{movie.caption}}</span></h1>
