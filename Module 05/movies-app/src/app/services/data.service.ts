@@ -12,9 +12,24 @@ export class DataService {
     private http: HttpClient
   ) { }
 
-  getAllMovies(): Promise<Movie[]> {
+  private getAllMovies(): Promise<Movie[]> {
     const url = `${environment.baseUrl}/movies`;
     const res = firstValueFrom(this.http.get<Movie[]>(url))
     return res;
+  }
+
+  async getMoviesCount(): Promise<number> {
+    const list = await this.getAllMovies();
+    return list.length;
+  }
+
+  async getMovieByIndex(index: number): Promise<Movie> {
+    const list = await this.getAllMovies();
+    return list[index];
+  }
+
+  async getMovieCaptions(): Promise<string[]> {
+    const list = await this.getAllMovies();
+    return list.map(m => m.caption);
   }
 }
