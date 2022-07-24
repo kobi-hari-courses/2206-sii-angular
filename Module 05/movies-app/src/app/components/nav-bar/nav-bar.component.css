@@ -1,0 +1,28 @@
+:host {
+    display: grid;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: rgb(157, 184, 233);
+    padding: 0px 12px;
+}
+
+.seperator {
+    flex-grow: 1;
+}
+
+nav a {
+    padding: 4px;
+    color: black;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+nav a.here {
+    background-color: rgb(77, 116, 189);
+    color: white;
+    border-bottom-color: rgb(34, 62, 115);;
+}

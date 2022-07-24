@@ -1,0 +1,16 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-item {
+    border: 1px solid lightblue;
+    margin: 4px;
+    padding: 4px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.movie-item:hover {
+    background-color: lightblue;
+}

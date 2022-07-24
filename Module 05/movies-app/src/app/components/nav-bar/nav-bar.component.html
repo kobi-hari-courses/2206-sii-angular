@@ -1,0 +1,9 @@
+<nav>
+    <a routerLinkActive="here" routerLink="home">Home</a>
+    <a routerLinkActive="here" routerLink="movies">Movies</a>
+    <a routerLinkActive="here" routerLink="account">Account</a>
+
+    <div class="seperator"></div>
+
+    <span>{{authState$ | async}}</span>
+</nav>

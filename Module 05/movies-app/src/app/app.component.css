@@ -1,3 +1,12 @@
 :host {
     display: grid;
+    grid-template-rows: auto auto 1fr;
+    padding: 4px;
+}
+
+router-outlet {
+    height: 12px
+}
+app-nav-bar {
+    margin: -4px;
 }

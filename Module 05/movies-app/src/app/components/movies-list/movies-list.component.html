@@ -1,0 +1,7 @@
+<div *ngIf="(movies$ | async) as movies">
+    <div class="movie-item" *ngFor="let caption of movies; let i = index"
+        (click)="onMovieSelect(i)"
+    >
+        {{i + 1}}. {{caption}}
+    </div>
+</div>
