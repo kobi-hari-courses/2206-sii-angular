@@ -8,11 +8,6 @@ import { DataService } from './services/data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  result: Movie[] | null = null;
-
   constructor(private dataService: DataService) {}
 
-  async go() {
-    this.result = await this.dataService.getAllMovies();
-  }
 }
