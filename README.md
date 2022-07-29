@@ -13,6 +13,9 @@
   * [Solution Video](https://www.dropbox.com/s/8ybqibl7geul9bm/Solution.mp4?dl=0)
 * [Angular with Services Exercise](exercises/03%20-%20angular%20services/01%20-%20async%20apps.md)
 
+## Final project
+* [Project Description](final%20project/README.md)
+
 ## Videos
 * [How to create a typescript driven web page](https://www.youtube.com/watch?v=Rw6DsQc4724)
   
