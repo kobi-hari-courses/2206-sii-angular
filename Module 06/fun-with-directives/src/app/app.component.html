@@ -1,0 +1,35 @@
+<app-expander>
+  <span expander-title>Hello world</span>
+  <h2 highlight="lightgreen">How are you?</h2>
+  <h3>We are learning angular today</h3>
+  <app-blank></app-blank>
+  <button #btn="expanderToggle" class="my-button" 
+    expander-toggle expandedLabel="close" collapsedLabel="open">
+  {{btn.buttonLabel}}</button>
+</app-expander>
+
+
+
+<hr>
+
+<h1>Hello Directives</h1>
+<h2 highlight="pink" (vanished)="onHighlightVanished($event)">Agenda</h2>
+<ul>
+  <li>How to write a directive</li>
+  <li underline>Renderer</li>
+  <li>HostBinding HostListener</li>
+  <li [highlight]="favoriteColor">Inputs and Outputs</li>
+  <li>Shortcut syntax</li>
+  <li #myHighlight="hadgasha" highlight="yellow" underline color="magenta">What is the selector</li>
+</ul>
+
+<div>
+  last li highlight was clicked: {{myHighlight.wasClicked}}
+</div>
+
+<div>
+  <input highlight type="text" value="hello">
+  <input type="number" value="12">
+  <input type="search" value="hello">
+</div>
+

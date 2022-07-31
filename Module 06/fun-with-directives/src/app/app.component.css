@@ -1,0 +1,10 @@
+span {
+    color: blue;
+    text-decoration: underline teal;
+}
+
+.my-button {
+    border: 1px solid green;
+    background-color: rgb(207, 255, 207);
+    color: rgb(1, 58, 1);
+}

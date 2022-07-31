@@ -1,0 +1,10 @@
+<div class="button">
+    <ng-content select="[expander-toggle]"></ng-content>
+</div>
+<div class="title-area">
+    <ng-content select="[expander-title]"></ng-content>
+</div>
+
+<div class="content-area" *ngIf="isExpanded">
+    <ng-content></ng-content>
+</div>
