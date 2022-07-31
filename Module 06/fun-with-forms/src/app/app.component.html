@@ -1,0 +1,33 @@
+<div class="form" [formGroup]="group">
+    <div class="form-field" *ngIf="control('username') as field">
+        <label>Username</label>
+        <input type="text" [formControl]="field">
+        <app-errors-presenter [errors]="field.errors"></app-errors-presenter>
+    </div>
+    <div class="form-field" *ngIf="control('email') as field">
+        <label>Email</label>
+        <input type="text" [formControl]="field">
+        <app-errors-presenter [errors]="field.errors"></app-errors-presenter>
+    </div>
+    <div class="form-field" *ngIf="control('description') as field">
+        <label>Description</label>
+        <textarea rows="3" [formControl]="field"></textarea>
+        <app-errors-presenter [errors]="field.errors"></app-errors-presenter>
+    </div>
+</div>
+
+<app-errors-presenter [errors]="group.errors"></app-errors-presenter>
+
+<button [disabled]="!group.valid">Submit</button>
+<div>
+    <button (click)="resetForm()">Reset Form</button>
+    <pre>
+        value: {{group.value | json}}
+        dirty: {{group.dirty}}
+        touched: {{group.touched}}
+        valid: {{group.valid}}
+        invalid: {{group.invalid}}
+        errors: {{group.errors | json}}
+        valueChanges: {{group.valueChanges | async | json}}
+    </pre>
+</div>

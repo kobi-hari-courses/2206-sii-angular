@@ -1,0 +1,9 @@
+<div class="errors" *ngIf="errors">
+    <div *ngIf="errors['required'] as err">required</div>
+    <div *ngIf="errors['maxlength'] as err">length: {{err.actualLength}} / {{err.requiredLength}}</div>
+    <div *ngIf="errors['email'] as err">should be in email format</div>
+    <div *ngIf="errors['lowercase'] as err">should all be lower case</div>
+    <div *ngIf="errors['dots'] as err">dots: {{err.actual}}/{{err.required}}</div>
+    <div *ngIf="errors['emailContainsUsername'] as err">email should contain the username</div>
+
+</div>

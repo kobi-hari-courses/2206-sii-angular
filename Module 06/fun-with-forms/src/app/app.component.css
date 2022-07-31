@@ -1,0 +1,31 @@
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin: 4px 0px;
+}
+
+label {
+    font-size: 0.7em;
+    color: darkgray;
+}
+
+input, textarea {
+    max-width: 200px;
+    border: 0px transparent;
+    border-bottom: 1px solid darkgray;
+    outline: 0px transparent;
+}
+
+input:focus, textarea:focus {
+    border-color: black;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+    border-color: red;
+    background-color: rgb(255, 176, 176);
+}
